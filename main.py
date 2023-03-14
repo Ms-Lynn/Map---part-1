@@ -7,13 +7,14 @@
     can move around on through a simple menu.'''
 #------------------------------------------------------------------------------
 # Current Location
-row = 0
+row = 0     # explain row here              
 col = 0
 max_row = 3
 max_col = 2
 
 playing = True
 
+# explain map
 map = [
      ["Start", "EmptySpace", "SpookySpace"],
      ["EmptySpace", "EmptySpace", "EmptySpace"],
