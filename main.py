@@ -1,10 +1,11 @@
 ###############################################################################
 # Title: Simple Text Adventure Game
 # coder: Ms. Lynn
-# version: 001
+# version: 002
 ###############################################################################
 ''' Program creates a simple map using nested lists that a character
-    can move around on through a simple menu.'''
+    can move around on through a simple menu.
+    Pretend Changes'''
 #------------------------------------------------------------------------------
 # Current Location
 row = 0     # explain row here              
