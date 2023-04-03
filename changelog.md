@@ -12,10 +12,6 @@ added - movement() function
 added - options to walk's sub menu "N,S,E,W" in movement()
 added - global variables max_row and max_col
 fixed - movement so player can not walk off "map"
-changed - menue option: "walk" to "explore"
-change - function name: movement() to explore()
-added - the capability for user to just type the first letter
-        of a menu option and input is not case sensitive
 fixed - comments and docstring
 fixed - PEP8 white spaces, line length, and indentation
 
