@@ -1,32 +1,36 @@
 ###############################################################################
 # Title: Simple Text Adventure Game
 # coder: Ms. Lynn
-# version: 002
+# version: 001
 ###############################################################################
 ''' Program creates a simple map using nested lists that a character
     can move around on through a simple menu.
-    Pretend Changes'''
+'''
 #------------------------------------------------------------------------------
 # Current Location
-row = 0     # explain row here              
+row = 0                   
 col = 0
 max_row = 3
 max_col = 2
 
+# Continuous play variables
 playing = True
 
-# explain map
+# Nested lists (an array) are used to make a map. map[row][col]
 map = [
      ["Start", "EmptySpace", "SpookySpace"],
-     ["EmptySpace", "EmptySpace", "EmptySpace"],
+     ["EmptySpace", "SpookySpace", "EmptySpace"],
      ["SpookySpace", "Treasure", "EmptySpace"],
      ["EmptySpace", "EmptySpace", "Key"]
  ]
 
+
 # Functions -------------------------------------------------------------------
 def Movement():
+    """Function is a sub menu that controls the users movement in the game."""
     global row, col, max_row, max_col, playing
     while True:
+        # Print only valid direction options to the consol.
         print(f"Choose a direction: ")
         if not row==0:
             print(f"-North")
@@ -37,6 +41,7 @@ def Movement():
         if not col==0:
             print(f"-West")
         dirchoice = input(f"Choice: ")
+        # Test if input is valid and in bounds; then update players location.
         if dirchoice == "North" and row > 0:
             row -= 1
             break
@@ -57,22 +62,26 @@ def Movement():
 
 
 # Main Code --------------------------------------------------------------------
+# Game Introduction:
+print(f"Welcome to my Castle!")
+print(f"Please tour around, and when your ready to leave type 'Quit'.")
+# Continuous Playing Loop:
 while playing:
     location_description =  map[row][col]
+    # Print a description of the players current room
     if location_description == "Start":
-        print(f"Welcome to my Castle!")
-        print(f"Please tour around, and when your ready to leave type 'Quit'.")
-        Movement()
+        print(f"You are in the starting position in a grand foyer.")
     elif location_description == "EmptySpace":
-        print(f"Nothing is in this room.")
-        Movement()
+        print(f"Nothing but cobwebs in this room.")
     elif location_description == "SpookySpace":
         print(f"This room is very spooky, you better leave quickly!")
-        Movement()
     elif location_description == "Treasure":
-        print(f"There is a giant treasure chest in the middle of the room!")
-        Movement()
+        print(f"There is a giant treasure chest in the middle of this room!")
     elif location_description == "Key":
-        print(f"There is a key hanging on the wall!")
-        Movement()
-print(f"Thanks for playing!!!!")
+        print(f"There is a key hanging on the wall in this room!")
+    else:
+        print(f"Unexpected error has occured, your location is unknown.")
+    # Only option right now is to move about the castle.
+    Movement()
+# End Game:
+print(f"Thanks for playing!!!!\n\n\n")
